@@ -9,7 +9,7 @@ import "./Navigation.scss";
 class Navigation extends Component {
   render() {
     return (
-      <div classNameName="page">
+      <div className="page">
         <header tabindex="0">Blog Listing App</header>
         <div id="nav-container">
           <div className="bg" />
