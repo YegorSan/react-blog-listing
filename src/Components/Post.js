@@ -41,14 +41,25 @@ class Post extends Component {
   render() {
     if (this.state.post) {
       return (
-        <div className="post-wrapper">
-          <h4>Post author</h4>
-          <p>{this.state.user.name}</p>
-          <h4>Post header</h4>
-          <h2>{this.state.post.title}</h2>
-          <h4>Post body</h4>
-          <p>{this.state.post.body}</p>
-          <Link to="/">Close</Link>
+        <div>
+          <h1
+            style={{
+              textAlign: "center",
+              marginTop: "10px",
+              marginBottom: "20px"
+            }}
+          >
+            Single Post Page
+          </h1>
+          <div className="post-wrapper">
+            <h4>Post author</h4>
+            <p>{this.state.user.name}</p>
+            <h4>Post header</h4>
+            <h2>{this.state.post.title}</h2>
+            <h4>Post body</h4>
+            <p>{this.state.post.body}</p>
+            <Link to="/">Close</Link>
+          </div>
         </div>
       );
     }

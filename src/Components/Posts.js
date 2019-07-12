@@ -24,27 +24,38 @@ class Posts extends Component {
     const { posts } = this.state;
     if (posts) {
       return (
-        <div className="cards">
-          {posts.map(post => (
-            <li className="cards__item">
-              <div className="card" key={post.id}>
-                <div className="card__image card__image--fence" />
-                <div className="card__content">
-                  <div className="card__title">
-                    {post.title.substring(0, 18)}
+        <div>
+          <h1
+            style={{
+              textAlign: "center",
+              marginTop: "10px",
+              marginBottom: "20px"
+            }}
+          >
+            Posts List
+          </h1>
+          <div className="cards">
+            {posts.map(post => (
+              <li className="cards__item">
+                <div className="card" key={post.id}>
+                  <div className="card__image card__image--fence" />
+
+                  <div className="card__content">
+                    <div className="card__title">
+                      {post.title.substring(0, 18) + "..."}
+                    </div>
+                    <p className="card__text">{post.body}</p>
+                    <Link
+                      to={"/posts/" + post.id}
+                      className="btn btn--block card__btn"
+                    >
+                      View Post
+                    </Link>
                   </div>
-                  <p className="card__text">{post.body}</p>
-                  <button className="btn btn--block card__btn">Button</button>
-                  <Link
-                    to={"/posts/" + post.id}
-                    className="btn btn--block card__btn"
-                  >
-                    {post.title}
-                  </Link>
                 </div>
-              </div>
-            </li>
-          ))}
+              </li>
+            ))}
+          </div>
         </div>
       );
     }

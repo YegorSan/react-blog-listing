@@ -11,8 +11,6 @@ class App extends Component {
         <Router>
           <div>
             <Navigation />
-            <Route path="/posts/:id" component={Post} />
-            <Route exact path="/" component={Posts} />
           </div>
         </Router>
       </div>
